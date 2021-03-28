@@ -1,13 +1,18 @@
 body {
-    margin-left: calc(50% - 205px);    
+
+    font-family: Helvetica, sans-serif;
+
 }
 
 header {
-    width: 400px;
     text-align: center;
     margin-top: 25px;
-    font-family: Helvetica, sans-serif;
 }
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    }
 
 .calculator-body {
     width: 400px;
@@ -17,6 +22,7 @@ header {
 }
 
 .full-display {
+    background-color:white;
     position: relative;
     width: 390px;
     height: 60px;
@@ -38,15 +44,13 @@ header {
 .calculator-input {
     position: absolute;
     top: 0px;
-    left: 0px;
-    background-color:white;
-    width: 100%;
+    right: 0px;
+    width: 340px;
     line-height: 60px;
     text-align: right;
     font-size: 35px;
-    margin-right: calc(20px-100%);
-    padding-right: 10px;
-    padding-left: 40px;
+    padding-right:10px;
+    padding-left:40px;
 
 } 
 
@@ -84,7 +88,16 @@ button {
     background-color:darkgrey;
 }
 
-footer {
+.history {
+    width: 300px;
+    margin: 0px 20px;
+    border: 1px solid;    
+}
 
-font-family: Helvetica, sans-serif;
+.history-header {
+text-align: center;
+}
+
+footer {
+    text-align: center;
 }

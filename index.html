@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,39 +18,51 @@
 
     </header>
 
-    <div class="calculator-body">
+    <div class="page-content">
 
-        <section class="full-display">
+        <div class="calculator-body">
 
-            <span id="sign" class="sign"></span>    
+            <section class="full-display">
 
-            <input id="display" class="calculator-input" type="text" value=0>  
+                <div id="sign" class="sign"></div>    
 
-        </section>
+                <div id="display" class="calculator-input" type="text">0</div>
 
-        <section class="buttons-grid">
+            </section>
 
-            <button onclick="clickClear('Clear')" class="clear-button">C</button>
-            <button onclick="clickPercent('%')"class="top-button">%</button>
-            <button onclick="clickChangeSign('+/-')" class="top-button">+/-</button>
-            <button onclick="clickOperation('/')" class="operator-button">&#247;</button>
-            <button onclick="clickNumber('7')">7</button>
-            <button onclick="clickNumber('8')">8</button>
-            <button onclick="clickNumber('9')">9</button>
-            <button onclick="clickOperation('*')" class="operator-button">&#215;</button>
-            <button onclick="clickNumber('4')">4</button>
-            <button onclick="clickNumber('5')">5</button>
-            <button onclick="clickNumber('6')">6</button>
-            <button onclick="clickOperation('-')" class="operator-button">-</button>
-            <button onclick="clickNumber('1')">1</button>
-            <button onclick="clickNumber('2')">2</button>
-            <button onclick="clickNumber('3')">3</button>
-            <button onclick="clickOperation('+')" class="plus-button">+</button>
-            <button onclick="clickNumber('0')">0</button>
-            <button onclick="clickDot('.')">.</button>
-            <button onclick="clickEqual('=')" class="equal-button">=</button>
+            <section class="buttons-grid">
 
-        </section>
+                <button onclick="clickClear('Clear')" class="clear-button">C</button>
+                <button onclick="clickPercent('%')"class="top-button">%</button>
+                <button onclick="clickChangeSign('+/-')" class="top-button">+/-</button>
+                <button onclick="clickOperation('/')" class="operator-button">&#247;</button>
+                <button onclick="clickNumber('7')">7</button>
+                <button onclick="clickNumber('8')">8</button>
+                <button onclick="clickNumber('9')">9</button>
+                <button onclick="clickOperation('*')" class="operator-button">&#215;</button>
+                <button onclick="clickNumber('4')">4</button>
+                <button onclick="clickNumber('5')">5</button>
+                <button onclick="clickNumber('6')">6</button>
+                <button onclick="clickOperation('-')" class="operator-button">-</button>
+                <button onclick="clickNumber('1')">1</button>
+                <button onclick="clickNumber('2')">2</button>
+                <button onclick="clickNumber('3')">3</button>
+                <button onclick="clickOperation('+')" class="plus-button">+</button>
+                <button onclick="clickNumber('0')">0</button>
+                <button onclick="clickDot('.')">.</button>
+                <button onclick="clickEqual('=')" class="equal-button">=</button>
+
+            </section>
+
+        </div>
+
+        <div class="history">
+
+            <h2 class="history-header">History</h2>
+
+            <ol id="history-list" class="history-list"></ol>
+
+        </div>
 
     </div>
 
@@ -57,7 +70,7 @@
 
 <footer>
 
-    <p>Made by: Gustavo Roncador Borges</p>
+    <p>developed by: Gustavo Roncador Borges</p>
 
 </footer>
 
