@@ -22,7 +22,7 @@ header {
 }
 
 .full-display {
-    background-color:white;
+    background-color:rgb(153, 15, 15);
     position: relative;
     width: 390px;
     height: 60px;
