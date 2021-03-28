@@ -1,6 +1,8 @@
-var displayNumber, displaySign, changeDisplay = false, selectedOperation, memoryDisplay
+var displayNumber, displaySign, changeDisplay = true, selectedOperation, memoryDisplay
 
 function clickNumber(button) {
+
+    console.log("clickNumber(" + button + ")")
 
     displayNumber = document.getElementById("display").innerText
 
@@ -26,6 +28,8 @@ function clickNumber(button) {
 
 function clickDot(button) {
 
+    console.log("clickDot(" + button + ")")
+
     displayNumber = document.getElementById("display").innerText
 
     if (changeDisplay == true) {
@@ -50,6 +54,8 @@ function clickDot(button) {
 
 function clickClear(button) {
 
+    console.log("clickClear(" + button + ")")
+
     document.getElementById("display").innerText = "0"
 
     document.getElementById("sign").innerText = ""
@@ -57,6 +63,8 @@ function clickClear(button) {
 };
 
 function clickChangeSign(button) {
+
+    console.log("clickChangeSign(" + button + ")")
        
         if (document.getElementById("sign").textContent == "") {
 
@@ -72,6 +80,8 @@ function clickChangeSign(button) {
 
 function clickOperation(button) {
 
+    console.log("clickOperation(" + button + ")")
+
     displaySign = document.getElementById("sign").textContent
 
     displayNumber = document.getElementById("display").innerText
@@ -85,6 +95,8 @@ function clickOperation(button) {
 };
 
 function clickEqual(button) {
+
+    console.log("clickEqual(" + button + ")")
 
     displaySign = document.getElementById("sign").textContent
 
@@ -116,6 +128,8 @@ function clickEqual(button) {
     
 };
 function clickPercent(button) {
+
+    console.log("clickPercent(" + button + ")")
 
     displaySign = document.getElementById("sign").textContent
 
@@ -162,3 +176,53 @@ function clickPercent(button) {
     changeDisplay = true
     
 };
+
+function backSpace(button) {
+
+    console.log("backSpace(" + button + ")")
+
+    displayNumber = document.getElementById("display").innerText
+
+    if (changeDisplay == false && displayNumber != "0" && displayNumber.length > 1) {
+
+        document.getElementById("display").innerText = displayNumber.substring(0,displayNumber.length-1)
+
+    } else if (displayNumber.length <= 1 || changeDisplay == true) {
+        
+        document.getElementById("display").innerText = "0"
+
+    }
+    
+}
+
+document.addEventListener("keydown", function(event) {
+
+    console.log("Keydown:" + event.key)
+
+    if (event.key >= 0) {
+
+        clickNumber(event.key.toString())
+
+    } else if (event.key === "." || event.key === ",") {
+
+        clickDot(".")
+
+    } else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
+
+        clickOperation(event.key.toString())
+
+    } else if (event.key === "Enter" || event.key === "=") {
+
+        clickEqual("=")
+
+    } else if (event.key === "Delete" || event.key === "c") {
+
+        clickClear('Clear')
+
+    } else if (event.key === "Backspace") {
+
+        backSpace(event.key)
+
+    }
+
+})
