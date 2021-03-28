@@ -197,31 +197,47 @@ function backSpace(button) {
 
 document.addEventListener("keydown", function(event) {
 
-    console.log("Keydown:" + event.key)
-
     if (event.key >= 0) {
 
         clickNumber(event.key.toString())
+        
+        //console.log("Keydown:" + event.key)
 
     } else if (event.key === "." || event.key === ",") {
 
         clickDot(".")
 
+        //console.log("Keydown:" + event.key)
+
     } else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
 
-        clickOperation(event.key.toString())
+        clickOperation(event.key.toString())        
+
+        //console.log("Keydown:" + event.key)
 
     } else if (event.key === "Enter" || event.key === "=") {
 
-        clickEqual("=")
+        clickEqual("=")        
+
+        //console.log("Keydown:" + event.key)
 
     } else if (event.key === "Delete" || event.key === "c") {
 
-        clickClear('Clear')
+        clickClear('Clear')        
+
+        //console.log("Keydown:" + event.key)
 
     } else if (event.key === "Backspace") {
 
-        backSpace(event.key)
+        backSpace(event.key)        
+
+        //console.log("Keydown:" + event.key)
+
+    } else if (event.key === "%") {
+
+        clickPercent('%')        
+
+        //console.log("Keydown:" + event.key)
 
     }
 

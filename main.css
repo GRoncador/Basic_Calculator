@@ -16,7 +16,7 @@ header {
 
 .calculator-body {
     width: 400px;
-    background-color:white;
+    background-color:rgb(196, 196, 196);
     padding: 10px;
     border: 5px outset;
 }
