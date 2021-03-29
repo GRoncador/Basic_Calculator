@@ -116,7 +116,7 @@ function clickEqual(button) {
     
     var result = eval(equation)
 
-    document.getElementById("history-list").innerHTML = document.getElementById("history-list").innerHTML + "<li>" + equation + " = " + result.toString() + "</li>"
+    document.getElementById("history-list").innerHTML = "<li>" + equation + " = " + result.toString() + "</li><br><br>" + document.getElementById("history-list").innerHTML
     
     document.getElementById("display").innerText = Math.abs(result).toString()
 
