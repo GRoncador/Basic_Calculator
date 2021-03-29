@@ -104,13 +104,17 @@ button {
     width: 300px;
     margin: 0px 20px;
     border: 1px solid;
-    overflow:auto;
-    text-overflow:initial;
     max-height: 555px;
 }
 
 .history-header {
     text-align: center;
+}
+
+.history-list {
+    overflow:auto;
+    text-overflow:clip;
+    max-height: calc(100% - 68px);
 }
 
 footer {
