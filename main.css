@@ -1,7 +1,5 @@
 body {
-
     font-family: Helvetica, sans-serif;
-
 }
 
 header {
@@ -12,7 +10,7 @@ header {
 .page-content {
     display: flex;
     justify-content: center;
-    }
+}
 
 .calculator-body {
     width: 400px;
@@ -25,33 +23,40 @@ header {
     background-color:rgb(255, 255, 255);
     position: relative;
     width: 390px;
-    height: 60px;
+    height: 90px;
+    max-width: 100%;
     margin-left: 5px;
     margin-bottom: 15px;
-
 }
+
+.memory-indicator {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 35px;
+    font-size: 24px;
+    padding-left: 15px;
+    z-index: 2;
+} 
 
 .sign {
     position: absolute;
     top: 0px;
     left: 0px;
-    line-height: 60px;
-    font-size: 35px;
+    line-height: 90px;
+    font-size: 60px;
     padding-left: 15px;
     z-index: 1;
 } 
 
 .calculator-input {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 340px;
-    line-height: 60px;
+    position: 0px 0px absolute;
+    line-height: 90px;
     text-align: right;
-    font-size: 35px;
-    padding-right:10px;
-    padding-left:40px;
-
+    font-size: 60px;
+    padding: 0px 10px 0px 40px;
+    overflow:hidden;
+    text-overflow:initial;
 } 
 
 .buttons-grid {
@@ -78,6 +83,7 @@ button {
 
 .clear-button {
     background-color:darksalmon;
+    border-radius: 50%;
 }
 
 .operator-button {
@@ -88,14 +94,23 @@ button {
     background-color:darkgrey;
 }
 
+.memory-button {
+    background-color:darkgrey;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
 .history {
     width: 300px;
     margin: 0px 20px;
-    border: 1px solid;    
+    border: 1px solid;
+    overflow:auto;
+    text-overflow:initial;
+    max-height: 555px;
 }
 
 .history-header {
-text-align: center;
+    text-align: center;
 }
 
 footer {

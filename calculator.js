@@ -1,4 +1,4 @@
-var displayNumber, displaySign, changeDisplay = true, selectedOperation, memoryDisplay
+var displayNumber, displaySign, changeDisplay = true, selectedOperation, memoryDisplay, memoryNumber = 0, memoryClear = false
 
 function clickNumber(button) {
 
@@ -23,6 +23,8 @@ function clickNumber(button) {
         document.getElementById("display").innerText = displayNumber + button
 
     }
+
+    memoryClear = false
 
 };
 
@@ -49,6 +51,8 @@ function clickDot(button) {
         document.getElementById("display").innerText = displayNumber + "."
 
     } else {}
+
+    memoryClear = false
     
 };
 
@@ -59,6 +63,8 @@ function clickClear(button) {
     document.getElementById("display").innerText = "0"
 
     document.getElementById("sign").innerText = ""
+
+    memoryClear = false
     
 };
 
@@ -66,15 +72,17 @@ function clickChangeSign(button) {
 
     console.log("clickChangeSign(" + button + ")")
        
-        if (document.getElementById("sign").textContent == "") {
+    if (document.getElementById("sign").textContent == "") {
 
-        document.getElementById("sign").innerText = "-"
+    document.getElementById("sign").innerText = "-"
 
-        } else {
+    } else {
 
-        document.getElementById("sign").innerText = ""
-        
-        }
+    document.getElementById("sign").innerText = ""
+    
+    }
+
+    memoryClear = false
     
 };
 
@@ -91,6 +99,8 @@ function clickOperation(button) {
     selectedOperation = button
 
     changeDisplay = true
+
+    memoryClear = false
 
 };
 
@@ -125,8 +135,11 @@ function clickEqual(button) {
     memoryDisplay = ""
 
     changeDisplay = true
+
+    memoryClear = false
     
 };
+
 function clickPercent(button) {
 
     console.log("clickPercent(" + button + ")")
@@ -174,6 +187,80 @@ function clickPercent(button) {
     memoryDisplay = ""
 
     changeDisplay = true
+
+    memoryClear = false
+    
+};
+
+function clickMemory(button) {
+   
+    console.log("clickMemory(" + button + ")")
+
+    if (button == "Clear" && memoryClear == false && memoryNumber != 0) {
+
+        document.getElementById("display").innerText = Math.abs(memoryNumber).toString()
+
+        if (memoryNumber < 0) {
+
+            document.getElementById("sign").innerText = "-"
+    
+        } else {
+    
+            document.getElementById("sign").innerText = ""
+    
+        }
+        
+        memoryClear = true
+
+    } else if (button == "Clear" && memoryClear == true && memoryNumber != 0) {
+
+        memoryNumber = ""
+
+        memoryClear = false
+
+    } else if (button == "+" || button == "-") {
+
+        memoryNumber = eval(memoryNumber + button + document.getElementById("sign").innerText + document.getElementById("display").innerText)
+
+    }
+
+    if (memoryNumber == 0) {
+
+        document.getElementById("memory-indicator").innerText = ""
+
+    } else  if (memoryNumber != 0) {
+
+        document.getElementById("memory-indicator").innerText = "M"
+
+    }
+    
+    changeDisplay = true
+    
+};
+
+function clickSqr(button) {
+
+    console.log("clickSqr(" + button + ")")
+
+    displaySign = document.getElementById("sign").innerText
+
+    if (displaySign == "-") {
+
+        document.getElementById("display").innerText = "Err"
+
+    } else {
+
+        displayNumber = document.getElementById("display").innerText
+
+        document.getElementById("display").innerText = Math.sqrt(displayNumber)
+
+        document.getElementById("history-list").innerHTML = document.getElementById("history-list").innerHTML + "<li>&#8730;(" + displayNumber + ") = " + Math.sqrt(displayNumber) + "</li>"
+
+    }
+
+    changeDisplay = true
+
+    memoryClear = false
     
 };
 
@@ -193,7 +280,7 @@ function backSpace(button) {
 
     }
     
-}
+};
 
 document.addEventListener("keydown", function(event) {
 
@@ -241,4 +328,4 @@ document.addEventListener("keydown", function(event) {
 
     }
 
-})
+});

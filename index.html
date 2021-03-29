@@ -24,6 +24,8 @@
 
             <section class="full-display">
 
+                <div id="memory-indicator" class="memory-indicator"></div> 
+
                 <div id="sign" class="sign"></div>    
 
                 <div id="display" class="calculator-input" type="text">0</div>
@@ -33,6 +35,10 @@
             <section class="buttons-grid">
 
                 <button onclick="clickClear('Clear')" class="clear-button">C</button>
+                <button onclick="clickMemory('Clear')" class="memory-button">MRC</button>
+                <button onclick="clickMemory('+')" class="memory-button">M+</button>
+                <button onclick="clickMemory('-')" class="memory-button">M-</button>
+                <button onclick="clickSqr('&#8730;')" class="top-button">&#8730;</button>
                 <button onclick="clickPercent('%')"class="top-button">%</button>
                 <button onclick="clickChangeSign('+/-')" class="top-button">+/-</button>
                 <button onclick="clickOperation('/')" class="operator-button">&#247;</button>
@@ -56,7 +62,7 @@
 
         </div>
 
-        <div class="history">
+        <div class="history" scrolling="true">
 
             <h2 class="history-header">History</h2>
 
