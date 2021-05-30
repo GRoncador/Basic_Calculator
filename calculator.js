@@ -285,47 +285,33 @@ function backSpace(button) {
 document.addEventListener("keydown", function(event) {
 
     if (event.key >= 0) {
-
-        clickNumber(event.key.toString())
         
-        //console.log("Keydown:" + event.key)
+        clickNumber(event.key.toString())
+                
+    } else {
+        
+        switch (event.key) {
+            
+            case "." :
+            case "," : clickDot("."); break
 
-    } else if (event.key === "." || event.key === ",") {
+            case "+" :
+            case "-" :
+            case "*" :
+            case "/" : clickOperation(event.key.toString()); break
 
-        clickDot(".")
+            case "Enter" :
+            case "=" : clickEqual("="); break
 
-        //console.log("Keydown:" + event.key)
+            case "Delete" :
+            case "c" : clickClear('Clear'); break
+    
+            case "Backspace" : backSpace(event.key); break
 
-    } else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") {
-
-        clickOperation(event.key.toString())        
-
-        //console.log("Keydown:" + event.key)
-
-    } else if (event.key === "Enter" || event.key === "=") {
-
-        clickEqual("=")        
-
-        //console.log("Keydown:" + event.key)
-
-    } else if (event.key === "Delete" || event.key === "c") {
-
-        clickClear('Clear')        
-
-        //console.log("Keydown:" + event.key)
-
-    } else if (event.key === "Backspace") {
-
-        backSpace(event.key)        
-
-        //console.log("Keydown:" + event.key)
-
-    } else if (event.key === "%") {
-
-        clickPercent('%')        
-
-        //console.log("Keydown:" + event.key)
-
+            case "%" : clickPercent('%'); break
+  
+        }
+        
     }
-
+    
 });
