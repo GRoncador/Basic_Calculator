@@ -116,7 +116,7 @@ function clickEqual(button) {
     
     var result = eval(equation)
 
-    document.getElementById("history-list").innerHTML = document.getElementById("history-list").innerHTML + "<li>" + equation + " = " + result.toString() + "</li>"
+    document.getElementById("history-list").innerHTML = "<li>" + equation + " = " + result.toString() + "</li><br>" + document.getElementById("history-list").innerHTML
     
     document.getElementById("display").innerText = Math.abs(result).toString()
 
@@ -168,7 +168,7 @@ function clickPercent(button) {
 
     }
 
-    document.getElementById("history-list").innerHTML = document.getElementById("history-list").innerHTML + "<li>" + equation + " = " + result.toString() + "</li>"
+    document.getElementById("history-list").innerHTML = "<li>" + equation + " = " + result.toString() + "</li><br>" + document.getElementById("history-list").innerHTML
     
     document.getElementById("display").innerText = Math.abs(result).toString()
 
@@ -254,7 +254,7 @@ function clickSqr(button) {
 
         document.getElementById("display").innerText = Math.sqrt(displayNumber)
 
-        document.getElementById("history-list").innerHTML = document.getElementById("history-list").innerHTML + "<li>&#8730;(" + displayNumber + ") = " + Math.sqrt(displayNumber) + "</li>"
+        document.getElementById("history-list").innerHTML = "<li>&#8730;(" + displayNumber + ") = " + Math.sqrt(displayNumber) + "</li><br>" + document.getElementById("history-list").innerHTML
 
     }
 
@@ -313,5 +313,5 @@ document.addEventListener("keydown", function(event) {
         }
         
     }
-    
+
 });
